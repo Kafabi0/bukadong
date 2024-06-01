@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Love Confirmation</title>
+    <title>JUST FOR YOU</title>
     <style>
         body {
-            background-color:black;
+            background-image: url(https://wallpapercave.com/wp/wp8359694.jpg);
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
+            background-size: cover;
+            overflow: hidden; /* Untuk menghindari scroll pada animasi hati */
         }
-        
+
         h1 {
             margin-top: 200px;
         }
-        
+
         button {
             margin-top: 50px;
             padding: 10px 20px;
             font-size: 18px;
-            background-color: white;
+            background-color: gray;
             color: black;
             border: none;
             cursor: pointer;
         }
-        
+
         #no-button {
             position: absolute;
             top: 50%;
@@ -31,7 +33,7 @@
             transform: translate(-50%, -50%);
             animation: moveButton 1s infinite;
         }
-        
+
         @keyframes moveButton {
             0% {
                 top: 50%;
@@ -54,19 +56,63 @@
                 left: 50%;
             }
         }
+
+        /* CSS untuk dialog kustom */
+        .custom-alert {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            display: none; /* Default tidak ditampilkan */
+        }
+
+        .custom-alert p {
+            margin-bottom: 20px;
+        }
+
+        .custom-alert button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #25D366; /* Warna khusus WhatsApp */
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none; /* Hapus garis bawah */
+        }
     </style>
 </head>
 <body>
-    <h1>Do you love Kafabi Aulia Fasyah?</h1>
+    <h1>Do you love Me?</h1>
+    <H2>WILL YOU BE MY GIRLFRIEND??</H2>
     <button id="yes-button" onclick="showThanks()">Yes</button>
     <button id="no-button">No</button>
+
+    <div id="custom-alert" class="custom-alert">
+        <p>Yeay! Makasih ya😘😘 </p>
+        <a href="https://wa.me/+6281223506238" target="_blank"><button>Lanjut Chat yu😁</button></a>
+    </div>
 
     <script>
         function showThanks() {
             document.getElementById("yes-button").disabled = true;
             document.getElementById("no-button").style.display = "none";
-            alert("Thanks for your love!");
+            document.getElementById("custom-alert").style.display = "block";
         }
+
+        document.getElementById("no-button").addEventListener("mouseover", function() {
+            const x = Math.random() * (window.innerWidth - this.offsetWidth);
+            const y = Math.random() * (window.innerHeight - this.offsetHeight);
+            this.style.left = x + 'px';
+            this.style.top = y + 'px';
+        });
     </script>
 </body>
 </html>
